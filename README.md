@@ -1,5 +1,5 @@
 # Reménysugár Állatmenhely
-table>
+<table>
   <tr>
     <td valign="top">
       <img width="484" alt="Dashboard és weboldal vázlat" src="https://github.com/user-attachments/assets/b9d6ffd1-86d1-492c-9a4e-d5ac37d8d231">
