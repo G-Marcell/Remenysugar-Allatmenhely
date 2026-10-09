@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f1eee4;
+    color: #303437;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    padding: 0 7%;
+    justify-content: space-between;
+    background-color: #f1eee4;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo span {
+    font-size: 28px;
+}
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+.logo p {
+    margin: 2px 0 0 0;
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    gap: 45px;
+}
+
+nav a,
+.kereses {
+    text-decoration: none;
+    color: #303437;
+    font-size: 12px;
+    font-weight: bold;
+    font-family:Dm Sans;
+}
+
+.kereses {
+    font-size: 13px;
+}
+
+
+main {
+    display: flex;
+    min-height: 630px;
+}
+
+.szoveg {
+    width: 58%;
+    padding: 100px 7%;
+    background-color: #e9e2d2;
+}
+
+.kep {
+    width: 42%;
+}
+
+.kep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.vonal {
+    width: 30px;
+    height: 2px;
+    background-color: #bca982;
+    margin-bottom: 15px;
+}
+
+.kis-szoveg {
+    font-family:Dm Sans;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+h1 {
+    font-family: Dm Serif Display;
+    font-size: 75px;
+    line-height: 0.95;
+    margin: 35px 0 25px 0;
+
+}
+
+h1 span {
+    color: #8d9395;
+    font-style: italic;
+}
+
+.leiras {
+    max-width: 540px;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family:Dm Sans;
+}
+
+.gombok {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    font-family:Dm Sans;
+}
+
+.fo-gomb {
+    background-color: #343a3c;
+    color: white;
+    padding: 18px 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.masik-gomb {
+    color: #343a3c;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
