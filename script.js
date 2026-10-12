@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const szuro = gomb.dataset.filter;
 
         const szurogombok = document.querySelectorAll(".szurok button");
-        const kartyak = document.querySelectorAll(".kartya");
+        const kartyak = document.querySelectorAll(".allat-kartya");
+
 
         szurogombok.forEach(function (masikGomb) {
             masikGomb.classList.remove("aktiv");
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         kartyak.forEach(function (kartya) {
             const tipus = kartya.dataset.tipus;
 
-            if (szuro === "mind" || tipus === szuro) {
+            if (szuro === "Mind" || tipus === szuro) {
                 kartya.style.display = "";
             } else {
                 kartya.style.display = "none";
