@@ -90,3 +90,58 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Fülek (Önkéntesség / Ideiglenes befogadás) váltása
+const fulek = document.querySelectorAll(".ful");
+const urlapCim = document.querySelector(".urlap-doboz h3");
+
+fulek.forEach(ful => {
+    ful.addEventListener("click", function () {
+
+        fulek.forEach(f => f.classList.remove("aktiv"));
+
+        this.classList.add("aktiv");
+
+        if (this.textContent.includes("IDEIGLENES")) {
+            urlapCim.textContent = "Ideiglenes befogadás jelentkezés";
+        } else {
+            urlapCim.textContent = "Önkéntes jelentkezés";
+        }
+    });
+});
+
+//Telfonszám,ne lehessen betűt beírni
+const telefonMezo = document.getElementById("telefonMezo");
+
+if (telefonMezo) {
+    telefonMezo.addEventListener("input", function (e) {
+
+        this.value = this.value.replace(/[^0-9+]/g, '');
+    });
+}
+
+// Hamburgermenü kezelése mobilon
+const hamburgerGomb = document.getElementById("hamburgerGomb");
+const navMenu = document.getElementById("navMenu");
+
+if (hamburgerGomb && navMenu) {
+    hamburgerGomb.addEventListener("click", function () {
+        navMenu.classList.toggle("nyitva");
+
+
+        if (navMenu.classList.contains("nyitva")) {
+            hamburgerGomb.textContent = "✕";
+        } else {
+            hamburgerGomb.textContent = "☰";
+        }
+    });
+
+    // Ha rákattintunk egy menüpontra, a menü csukódjon be automatikusan
+    const menuLinkek = navMenu.querySelectorAll("a");
+    menuLinkek.forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("nyitva");
+            hamburgerGomb.textContent = "☰";
+        });
+    });
+}

@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html{
+scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: #f1eee4;
@@ -483,7 +487,7 @@ h1 span {
 /* --- MOBIL ÉS KISEBB TABLET NÉZET (1000px alatt) --- */
 @media (max-width: 1000px) {
 
-    /* 1. A fejléc elemei egymás alá kerüljenek vagy jobban férjenek el */
+
     header {
         padding: 0 4%;
         height: auto;
@@ -492,7 +496,7 @@ h1 span {
         gap: 10px;
     }
 
-    /* 2. A főoldal (main) részei egymás alá kerüljenek (szöveg felül, kép alul) */
+
     main {
         flex-direction: column;
     }
@@ -504,10 +508,10 @@ h1 span {
 
     .kep {
         width: 100%;
-        height: 350px; /* Adunk neki egy fix magasságot mobilon, hogy ne legyen óriási */
+        height: 350px;
     }
 
-    /* 3. A főoldali h1 betűmérete kisebb legyen mobilon, hogy ne tördelődjön csúnyán */
+
     h1 {
         font-size: 42px;
     }
@@ -516,7 +520,7 @@ h1 span {
 /* --- KISEBB MOBILOKHOZ (600px alatt) --- */
 @media (max-width: 600px) {
 
-    /* A navigációs menü elemei kicsit összébb húzódnak */
+
     nav {
         gap: 20px;
     }
@@ -526,6 +530,217 @@ h1 span {
     }
 
     .kereses {
-        display: none; /* Ha nagyon pici a mobil, a jobb oldali gombot elrejthetjük, hogy ne torlódjon */
+        display: none;
+    }
+}
+/* --- ÖNKÉNTESSÉG SZEKCIÓ --- */
+.onkentes-szekcio {
+    display: flex;
+    background-color: #e9e2d2; /* Hasonló a kezdőlap bal oldali hátteréhez */
+    min-height: 700px;
+}
+
+.onkentes-bal {
+    width: 50%;
+    padding: 80px 7%;
+}
+
+.lista-elemek {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista-sor {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d5cdbf;
+}
+
+.lista-sor span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #858b8d;
+    font-family: Dm Sans, Arial, sans-serif;
+}
+
+.lista-sor p {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #303437;
+}
+
+/* Jobb oldal (Űrlap) */
+.onkentes-jobb {
+    width: 50%;
+    background-color: #f5f2eb;
+    padding: 60px 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fulek {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #e2dacf;
+    margin-bottom: 35px;
+}
+
+.ful {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #858b8d;
+    cursor: pointer;
+    position: relative;
+}
+
+.ful.aktiv {
+    color: #303437;
+}
+
+.ful.aktiv::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #303437;
+}
+
+.urlap-doboz h3 {
+    margin: 0 0 8px 0;
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.urlap-alcim {
+    margin: 0 0 30px 0;
+    font-size: 13px;
+    color: #777d7e;
+}
+
+.jelentkezes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-sor {
+    display: flex;
+    gap: 20px;
+}
+
+.input-csoport {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-csoport.teljes-szelesseg {
+    width: 100%;
+}
+
+.input-csoport label {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #858b8d;
+}
+
+.input-csoport input {
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #bca982;
+    background: transparent;
+    font-size: 14px;
+    color: #303437;
+    outline: none;
+}
+
+.input-csoport input::placeholder {
+    color: #b5ada1;
+}
+
+.checkbox-csoport {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-csoport label {
+    font-size: 12px;
+    color: #777d7e;
+}
+
+.beküldés-gomb {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* Reszponzivitás mobilon */
+@media (max-width: 1000px) {
+    .onkentes-szekcio {
+        flex-direction: column;
+    }
+    .onkentes-bal, .onkentes-jobb {
+        width: 100%;
+    }
+    .input-sor {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+/* Alapból asztali nézeten a gomb rejtve van */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #303437;
+}
+
+/* Mobilos nézet (1000px alatt) */
+
+@media (max-width: 1000px) {
+    .hamburger {
+        display: block;
+    }
+
+
+    nav {
+        display: none !important;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        background-color: #f1eee4;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+
+    nav.nyitva {
+        display: flex !important;
     }
 }

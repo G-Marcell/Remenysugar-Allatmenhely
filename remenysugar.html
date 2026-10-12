@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<!--MENÜPONT-->
     <header>
         <div class="logo">
             <span>🐾</span>
@@ -19,16 +19,25 @@
             </div>
         </div>
 
-        <nav>
+        <nav id="navMenu">
+
             <a href="#kezdo">KEZDŐLAP</a>
             <a href="#orok">ÁLLATAINK</a>
-            <a href="#">ÖNKÉNTESSÉG</a>
+            <a href="#onkent">ÖNKÉNTESSÉG</a>
         </nav>
 
         <a href="#orok" class="kereses">Társat keresek →</a>
+
+
+        <button class="hamburger" id="hamburgerGomb" aria-label="Menü megnyitása">
+        ☰
+    </button>
+
+
+
     </header>
 
-
+<!--KEZDŐ-->
     <main id="kezdo">
 
 
@@ -73,7 +82,7 @@
 
 
 
-
+    <!--ÖRÖKBEFOGADÁS-->
     <section id="orok"><section class="gazdira-var" id="orokbefogadas">
     <div class="also-fejlec">
         <div class="also-vonal"></div>
@@ -300,8 +309,90 @@
 </div>
     </section>
 
+
+
+    <!-- ÖNKÉNTESSÉG ÉS IDEIGLENES BEFOGADÁS SZEKCIÓ -->
+
+
+
+<section class="onkentes-szekcio" id="onkent">
+    <div class="onkentes-bal">
+        <div class="vonal"></div>
+        <p class="kis-szoveg">A SEGÍTSÉGNEK SOK FORMÁJA VAN</p>
+        <h1>Legyél te is a<br><span>remény sugara.</span></h1>
+        <p class="leiras">Néhány szabad óra, egy ideiglenes otthon vagy egy jó szó is hatalmas változást jelent. Válaszd ki, hogyan segítenél!</p>
+
+        <div class="lista-elemek">
+            <div class="lista-sor">
+                <span>01</span>
+                <p>Sétáltatás és gondozás</p>
+            </div>
+            <div class="lista-sor">
+                <span>02</span>
+                <p>Rendezvények, fotózás</p>
+            </div>
+            <div class="lista-sor">
+                <span>03</span>
+                <p>Ideiglenes befogadás</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="onkentes-jobb">
+
+
+
+
+        <div class="fulek">
+            <button class="ful aktiv" type="button">ÖNKÉNTESSÉG</button>
+            <button class="ful" type="button">IDEIGLENES BEFOGADÁS</button>
+        </div>
+
+        <div class="urlap-doboz">
+            <h3>Önkéntes jelentkezés</h3>
+            <p class="urlap-alcim">Töltsd ki az űrlapot, és hamarosan keresünk a részletekkel.</p>
+
+            <form class="jelentkezes-form">
+                <div class="input-sor">
+                    <div class="input-csoport">
+                        <label>TELJES NÉV</label>
+                        <input type="text" placeholder="Példa Petra" required>
+                    </div>
+                    <div class="input-csoport">
+                        <label>TELEFONSZÁM</label>
+                        <input type="tel" id="telefonMezo" placeholder="+36 30 123 4567" required>
+                    </div>
+                </div>
+
+                <div class="input-sor">
+                    <div class="input-csoport">
+                        <label>E-MAIL CÍM</label>
+                        <input type="email" placeholder="pelda@email.hu" required>
+                    </div>
+                    <div class="input-csoport">
+                        <label>SZÜLETÉSI IDŐ</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+
+                <div class="input-csoport teljes-szelesseg">
+                    <label>LAKCÍM</label>
+                    <input type="text" placeholder="Irányítószám, település, utca, házszám" required>
+                </div>
+
+                <div class="checkbox-csoport">
+                    <input type="checkbox" id="adatvedelem" required>
+                    <label for="adatvedelem">Elfogadom az adatvédelmi tájékoztatóban foglaltakat.</label>
+                </div>
+
+                <button type="submit" class="fo-gomb beküldés-gomb">JELENTKEZÉS ELKÜLDÉSE →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 <script src="script.js"></script>
-```
+
 
 </body>
 </html>
