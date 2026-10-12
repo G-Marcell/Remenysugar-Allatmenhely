@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remény Sugár Állatmenhely</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!--MENÜPONT-->
+    <header>
+        <div class="logo">
+            <span>🐾</span>
+            <div>
+                <h2>Remény Sugár</h2>
+                <p>ÁLLATMENHELY</p>
+
+            </div>
+        </div>
+
+        <nav id="navMenu">
+
+            <a href="#kezdo">KEZDŐLAP</a>
+            <a href="#orok">ÁLLATAINK</a>
+            <a href="#onkent">ÖNKÉNTESSÉG</a>
+        </nav>
+
+        <a href="#orok" class="kereses">Társat keresek →</a>
+
+
+        <button class="hamburger" id="hamburgerGomb" aria-label="Menü megnyitása">
+        ☰
+    </button>
+
+
+
+    </header>
+
+<!--KEZDŐ-->
+    <main id="kezdo">
+
+
+        <div class="szoveg">
+
+            <div class="vonal"></div>
+
+            <p class="kis-szoveg">
+                EGY HELY, AHOL ÚJ TÖRTÉNETEK KEZDŐDNEK
+            </p>
+
+            <h1>
+                Minden<br>
+                mancs<br>
+                <span>megérdemel</span><br>
+                egy otthont.
+            </h1>
+
+            <p class="leiras">
+                Segítünk, hogy egymásra találjatok. Ismerd meg
+                védenceinket, és adj egy második esélyt annak,
+                aki már régóta rád vár.
+            </p>
+
+            <div class="gombok">
+                <a href="#" class="fo-gomb">ISMERD MEG ŐKET →</a>
+                <a href="#" class="masik-gomb">Segíteni szeretnék</a>
+            </div>
+
+        </div>
+
+        <div class="kep">
+            <img src="kutya.jpg" alt="Örökbefogadásra váró kutya">
+        </div>
+
+        <hr>
+
+    </main>
+
+
+
+
+
+
+    <!--ÖRÖKBEFOGADÁS-->
+    <section id="orok"><section class="gazdira-var" id="orokbefogadas">
+    <div class="also-fejlec">
+        <div class="also-vonal"></div>
+        <p>LEHET, HOGY PONT ITT VÁR RÁD</p>
+    </div>
+
+    <div class="also-tartalom">
+        <h2>Gazdira váró <span>szívek</span></h2>
+
+        <div class="szurok">
+            <button class="aktiv" data-filter="mind" type="button">MINDENKI</button>
+            <button data-filter="kutya" type="button">KUTYÁK</button>
+            <button data-filter="macska" type="button">MACSKÁK</button>
+        </div>
+    </div>
+
+    <div class="allat-racs">
+
+        <article class="allat-kartya"
+            data-tipus="kutya"
+            data-nev="Bodza"
+            data-kor="3 éves"
+            data-erkezes="2023. október"
+            data-szemelyiseg="Kedves, ragaszkodó és játékos. Szereti a sétákat, és gyorsan kötődik az emberekhez.">
+
+            <img src="kutya.jpg" alt="Bodza, örökbefogadható kutya">
+
+            <span class="allat-cimke">KUTYA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Bodza</h3>
+                    <p>3 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Bodza adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Bodza személyisége</h3>
+                <p>Kedves, ragaszkodó és játékos. Szereti a sétákat, és gyorsan kötődik az emberekhez.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2023. október</p>
+                <p><strong>Életkor:</strong> 3 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+        <article class="allat-kartya"
+            data-tipus="macska"
+            data-nev="Málna"
+            data-kor="2 éves"
+            data-erkezes="2024. június"
+            data-szemelyiseg="Kíváncsi, nyugodt és bújós cica. Szeret kényelmes helyeken pihenni, de szívesen játszik is.">
+
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=85"
+                alt="Málna, örökbefogadható macska">
+
+            <span class="allat-cimke">MACSKA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Málna</h3>
+                    <p>2 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Málna adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Málna személyisége</h3>
+                <p>Kíváncsi, nyugodt és bújós cica. Szeret kényelmes helyeken pihenni, de szívesen játszik is.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2024. június</p>
+                <p><strong>Életkor:</strong> 2 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+        <article class="allat-kartya"
+            data-tipus="kutya"
+            data-nev="Morzsi"
+            data-kor="5 éves"
+            data-erkezes="2022. február"
+            data-szemelyiseg="Vidám, energikus és barátságos kutya. Szereti az aktív programokat és az emberek társaságát.">
+
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=85"
+                alt="Morzsi, örökbefogadható kutya">
+
+            <span class="allat-cimke">KUTYA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Morzsi</h3>
+                    <p>5 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Morzsi adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Morzsi személyisége</h3>
+                <p>Vidám, energikus és barátságos kutya. Szereti az aktív programokat és az emberek társaságát.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2022. február</p>
+                <p><strong>Életkor:</strong> 5 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+        <article class="allat-kartya"
+            data-tipus="macska"
+            data-nev="Pötty"
+            data-kor="1 éves"
+            data-erkezes="2025. május"
+            data-szemelyiseg="Eleinte kicsit félénk, de türelmes közeledésre kíváncsi és játékos cicává válik.">
+
+            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85"
+                alt="Pötty, örökbefogadható macska">
+
+            <span class="allat-cimke">MACSKA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Pötty</h3>
+                    <p>1 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Pötty adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Pötty személyisége</h3>
+                <p>Eleinte kicsit félénk, de türelmes közeledésre kíváncsi és játékos cicává válik.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2025. május</p>
+                <p><strong>Életkor:</strong> 1 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+        <article class="allat-kartya"
+            data-tipus="kutya"
+            data-nev="Zsömle"
+            data-kor="4 éves"
+            data-erkezes="2023. január"
+            data-szemelyiseg="Nyugodt, figyelmes és hűséges társ. Szereti a hosszú sétákat és a nyugodt környezetet.">
+
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85"
+                alt="Zsömle, örökbefogadható kutya">
+
+            <span class="allat-cimke">KUTYA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Zsömle</h3>
+                    <p>4 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Zsömle adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Zsömle személyisége</h3>
+                <p>Nyugodt, figyelmes és hűséges társ. Szereti a hosszú sétákat és a nyugodt környezetet.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2023. január</p>
+                <p><strong>Életkor:</strong> 4 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+        <article class="allat-kartya"
+            data-tipus="macska"
+            data-nev="Cirmi"
+            data-kor="6 éves"
+            data-erkezes="2024. augusztus"
+            data-szemelyiseg="Csendes, gyengéd és ragaszkodó. Szeret békés helyen pihenni, és szívesen fogadja a simogatást.">
+
+            <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=85"
+                alt="Cirmi, örökbefogadható macska">
+
+            <span class="allat-cimke">MACSKA</span>
+
+            <div class="kartya-alja">
+                <div>
+                    <h3>Cirmi</h3>
+                    <p>6 éves</p>
+                </div>
+                <button class="reszlet-gomb" type="button"
+                    aria-label="Cirmi adatlapja">→</button>
+            </div>
+
+            <div class="allat-hover">
+                <h3>Cirmi személyisége</h3>
+                <p>Csendes, gyengéd és ragaszkodó. Szeret békés helyen pihenni, és szívesen fogadja a simogatást.</p>
+                <p><strong>Menhelyre érkezett:</strong> 2024. augusztus</p>
+                <p><strong>Életkor:</strong> 6 éves</p>
+                <span>Kattints a részletekért →</span>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="galeria-megjegyzes">
+        Vidd a képre az egeret a részletekért, kattints a teljes adatlapért.
+    </p>
+</section>
+
+<div class="adatlap-hatter" id="adatlapHatter" aria-hidden="true">
+    <div class="adatlap" role="dialog" aria-modal="true"
+        aria-labelledby="adatlapNev">
+
+        <button class="adatlap-bezar" id="adatlapBezar"
+            type="button" aria-label="Bezárás">×</button>
+
+        <span class="adatlap-cimke" id="adatlapTipus"></span>
+        <h2 id="adatlapNev"></h2>
+        <p id="adatlapKor"></p>
+        <p id="adatlapErkezes"></p>
+
+        <h3>Személyiség</h3>
+        <p id="adatlapSzemelyiseg"></p>
+
+        <p class="adatlap-lablec">
+            Ismerd meg személyesen is leendő társadat!
+        </p>
+    </div>
+</div>
+    </section>
+
+
+
+    <!-- ÖNKÉNTESSÉG ÉS IDEIGLENES BEFOGADÁS SZEKCIÓ -->
+
+
+
+<section class="onkentes-szekcio" id="onkent">
+    <div class="onkentes-bal">
+        <div class="vonal"></div>
+        <p class="kis-szoveg">A SEGÍTSÉGNEK SOK FORMÁJA VAN</p>
+        <h1>Legyél te is a<br><span>remény sugara.</span></h1>
+        <p class="leiras">Néhány szabad óra, egy ideiglenes otthon vagy egy jó szó is hatalmas változást jelent. Válaszd ki, hogyan segítenél!</p>
+
+        <div class="lista-elemek">
+            <div class="lista-sor">
+                <span>01</span>
+                <p>Sétáltatás és gondozás</p>
+            </div>
+            <div class="lista-sor">
+                <span>02</span>
+                <p>Rendezvények, fotózás</p>
+            </div>
+            <div class="lista-sor">
+                <span>03</span>
+                <p>Ideiglenes befogadás</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="onkentes-jobb">
+
+
+
+
+        <div class="fulek">
+            <button class="ful aktiv" type="button">ÖNKÉNTESSÉG</button>
+            <button class="ful" type="button">IDEIGLENES BEFOGADÁS</button>
+        </div>
+
+        <div class="urlap-doboz">
+            <h3>Önkéntes jelentkezés</h3>
+            <p class="urlap-alcim">Töltsd ki az űrlapot, és hamarosan keresünk a részletekkel.</p>
+
+            <form class="jelentkezes-form">
+                <div class="input-sor">
+                    <div class="input-csoport">
+                        <label>TELJES NÉV</label>
+                        <input type="text" placeholder="Példa Petra" required>
+                    </div>
+                    <div class="input-csoport">
+                        <label>TELEFONSZÁM</label>
+                        <input type="tel" id="telefonMezo" placeholder="+36 30 123 4567" required>
+                    </div>
+                </div>
+
+                <div class="input-sor">
+                    <div class="input-csoport">
+                        <label>E-MAIL CÍM</label>
+                        <input type="email" placeholder="pelda@email.hu" required>
+                    </div>
+                    <div class="input-csoport">
+                        <label>SZÜLETÉSI IDŐ</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+
+                <div class="input-csoport teljes-szelesseg">
+                    <label>LAKCÍM</label>
+                    <input type="text" placeholder="Irányítószám, település, utca, házszám" required>
+                </div>
+
+                <div class="checkbox-csoport">
+                    <input type="checkbox" id="adatvedelem" required>
+                    <label for="adatvedelem">Elfogadom az adatvédelmi tájékoztatóban foglaltakat.</label>
+                </div>
+
+                <button type="submit" class="fo-gomb beküldés-gomb">JELENTKEZÉS ELKÜLDÉSE →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
