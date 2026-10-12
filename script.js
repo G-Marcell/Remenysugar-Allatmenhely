@@ -12,28 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const erkezesElem = document.getElementById("adatlapErkezes");
     const szemelyisegElem = document.getElementById("adatlapSzemelyiseg");
 
-    // Kutyak es macskak szurese
-    szurogombok.forEach(function (gomb) {
-        gomb.addEventListener("click", function () {
-            const szuro = gomb.dataset.filter;
 
-            szurogombok.forEach(function (masikGomb) {
-                masikGomb.classList.remove("aktiv");
-            });
-
-            gomb.classList.add("aktiv");
-
-            kartyak.forEach(function (kartya) {
-                const tipus = kartya.dataset.tipus;
-
-                if (szuro === "mind" || tipus === szuro) {
-                    kartya.style.display = "";
-                } else {
-                    kartya.style.display = "none";
-                }
-            });
-        });
-    });
 
     // Reszletes adatlap megnyitasa
     function adatlapMegnyitasa(kartya) {
@@ -90,6 +69,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+    // Kutyak es macskak szurese
+    function szures(gomb) {
+        const szuro = gomb.dataset.filter;
+
+        const szurogombok = document.querySelectorAll(".szurok button");
+        const kartyak = document.querySelectorAll(".kartya");
+
+        szurogombok.forEach(function (masikGomb) {
+            masikGomb.classList.remove("aktiv");
+        });
+
+        gomb.classList.add("aktiv");
+
+        kartyak.forEach(function (kartya) {
+            const tipus = kartya.dataset.tipus;
+
+            if (szuro === "mind" || tipus === szuro) {
+                kartya.style.display = "";
+            } else {
+                kartya.style.display = "none";
+            }
+        });
+    }
+
+
+
+
+
+
 
 // Fülek (Önkéntesség / Ideiglenes befogadás) váltása
 const fulek = document.querySelectorAll(".ful");
