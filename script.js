@@ -14,6 +14,7 @@ let szemelyisegElem=null;
     //gether all date for use and store it in local storage
     function dataStoring() {
             kartyak = document.querySelectorAll(".allat-kartya");
+            szurogombok = document.querySelectorAll(".szurok button");
             
             hatter = document.getElementById("adatlapHatter");
             bezarGomb = document.getElementById("adatlapBezar");
@@ -56,17 +57,16 @@ let szemelyisegElem=null;
 
     // Kutyak es macskak szurese
     function szures(gomb) {
-        const szuro = gomb.dataset.filter;
 
         if(kartyak==null){
-            kartyak = document.querySelectorAll(".allat-kartya");
+            dataStoring();
         }
         if(szurogombok==null){
-            szurogombok = document.querySelectorAll(".szurok button");
+            dataStoring();
         }
 
-
-
+        const szuro = gomb.dataset.filter;
+        
         szurogombok.forEach(function (masikGomb) {
             masikGomb.classList.remove("aktiv");
         });

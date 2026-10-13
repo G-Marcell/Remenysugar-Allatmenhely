@@ -6,7 +6,18 @@ header("Content-Type: application/json; charset=utf-8");
 $conn = new mysqli("127.0.0.1", "root", "", "allatmenhely");
 $conn->set_charset("utf8mb4");
 
-$result = $conn->query("SELECT `faj_nev` FROM `fajok`");
+$result = $conn->query(
+    "SELECT DISTINCT fajok.faj_nev
+    FROM (
+        SELECT faj_id
+        FROM animals
+        WHERE statusz = 'Gazdikereső'
+        ORDER BY erkezes DESC
+        LIMIT 6
+    ) AS legujabb
+    INNER JOIN fajok
+        ON legujabb.faj_id = fajok.faj_id"
+);
 
 $fajok = [];
 

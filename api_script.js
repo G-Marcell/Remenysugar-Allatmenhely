@@ -2,10 +2,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     // adat be olvasás (http://localhost/Remenysugar-Allatmenhely/api.php) ról 
-    const response = await fetch("http://localhost/Remenysugar-Allatmenhely/api.php");
+    const response = await fetch("http://localhost/api.php");
     const data = await response.json();
 
     const fajok = data.fajok;
+
     const allatok = data.allatok;
 
 
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         kartya.innerHTML = `
             <img src="${allat.kep}" alt="${allat.nev} örökbefogadható ${allat.faj}">
-            <span class="allat-cimke">${allat.nev}</span>
+            <span class="allat-cimke">${allat.faj}</span>
             <div class="kartya-alja">
                 <div>
                     <h3>${allat.nev}</h3>
