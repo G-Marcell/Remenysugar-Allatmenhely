@@ -1,82 +1,70 @@
+let kartyak=null;
+let szurogombok=null;
 
-document.addEventListener("DOMContentLoaded", function () {
-    const kartyak = document.querySelectorAll(".allat-kartya");
-    const szurogombok = document.querySelectorAll(".szurok button");
+let hatter=null;
+let bezarGomb=null;
 
-    const hatter = document.getElementById("adatlapHatter");
-    const bezarGomb = document.getElementById("adatlapBezar");
+let tipusElem=null;
+let nevElem=null;
+let korElem=null;
+let erkezesElem=null;
+let szemelyisegElem=null;
+ 
 
-    const tipusElem = document.getElementById("adatlapTipus");
-    const nevElem = document.getElementById("adatlapNev");
-    const korElem = document.getElementById("adatlapKor");
-    const erkezesElem = document.getElementById("adatlapErkezes");
-    const szemelyisegElem = document.getElementById("adatlapSzemelyiseg");
+    //gether all date for use and store it in local storage
+    function dataStoring() {
+            kartyak = document.querySelectorAll(".allat-kartya");
+            
+            hatter = document.getElementById("adatlapHatter");
+            bezarGomb = document.getElementById("adatlapBezar");
+
+            tipusElem = document.getElementById("adatlapTipus");
+            nevElem = document.getElementById("adatlapNev");
+            korElem = document.getElementById("adatlapKor");
+            erkezesElem = document.getElementById("adatlapErkezes");
+            szemelyisegElem = document.getElementById("adatlapSzemelyiseg");
 
 
+            // Adatlap bezarasa
+            function adatlapBezarasa() {
+                hatter.classList.remove("nyitva");
+                hatter.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
 
-    // Reszletes adatlap megnyitasa
-    function adatlapMegnyitasa(kartya) {
-        const nev = kartya.dataset.nev;
-        const tipus = kartya.dataset.tipus;
-        const kor = kartya.dataset.kor;
-        const erkezes = kartya.dataset.erkezes;
-        const szemelyiseg = kartya.dataset.szemelyiseg;
+            bezarGomb.addEventListener("click", adatlapBezarasa);
 
-        nevElem.textContent = nev;
-        tipusElem.textContent =
-            tipus === "kutya" ? "KUTYA" : "MACSKA";
+            // Kattintas a sotet hatterre
+            hatter.addEventListener("click", function (event) {
+                if (event.target === hatter) {
+                    adatlapBezarasa();
+                }
+            });
 
-        korElem.textContent = "Életkor: " + kor;
-        erkezesElem.textContent =
-            "Menhelyre érkezett: " + erkezes;
+            // Escape billentyuvel is bezarhato
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && hatter.classList.contains("nyitva")) {
+                    adatlapBezarasa();
+                }
+            });
 
-        szemelyisegElem.textContent = szemelyiseg;
-
-        hatter.classList.add("nyitva");
-        hatter.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-
-        bezarGomb.focus();
     }
 
-    // Kartyara vagy a nyilra kattintva is megnyilik
-    kartyak.forEach(function (kartya) {
-        kartya.addEventListener("click", function () {
-            adatlapMegnyitasa(kartya);
-        });
-    });
 
-    // Adatlap bezarasa
-    function adatlapBezarasa() {
-        hatter.classList.remove("nyitva");
-        hatter.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-    }
 
-    bezarGomb.addEventListener("click", adatlapBezarasa);
-
-    // Kattintas a sotet hatterre
-    hatter.addEventListener("click", function (event) {
-        if (event.target === hatter) {
-            adatlapBezarasa();
-        }
-    });
-
-    // Escape billentyuvel is bezarhato
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && hatter.classList.contains("nyitva")) {
-            adatlapBezarasa();
-        }
-    });
-});
 
 
     // Kutyak es macskak szurese
     function szures(gomb) {
         const szuro = gomb.dataset.filter;
 
-        const szurogombok = document.querySelectorAll(".szurok button");
-        const kartyak = document.querySelectorAll(".allat-kartya");
+        if(kartyak==null){
+            kartyak = document.querySelectorAll(".allat-kartya");
+        }
+        if(szurogombok==null){
+            szurogombok = document.querySelectorAll(".szurok button");
+        }
+
 
 
         szurogombok.forEach(function (masikGomb) {
@@ -97,7 +85,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+        // Reszletes adatlap megnyitasa
+    function adatlapMegnyitasa(kartya) {
 
+        if(kartyak==null){
+            dataStoring();
+        }
+
+
+        const nev = kartya.dataset.nev;
+        const tipus = kartya.dataset.tipus;
+        const kor = kartya.dataset.kor;
+        const erkezes = kartya.dataset.erkezes;
+        const szemelyiseg = kartya.dataset.szemelyiseg;
+
+        nevElem.textContent = nev;
+        tipusElem.textContent =
+            tipus === tipus.toLowerCase() ? tipus.charAt(0).toUpperCase() + tipus.slice(1) : tipus;
+
+        korElem.textContent = "Életkor: " + kor;
+        erkezesElem.textContent =
+            "Menhelyre érkezett: " + erkezes;
+
+        szemelyisegElem.textContent = szemelyiseg;
+
+        hatter.classList.add("nyitva");
+        hatter.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+
+    }
 
 
 
