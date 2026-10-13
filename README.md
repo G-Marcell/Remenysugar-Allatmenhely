@@ -13,3 +13,10 @@
     </td>
   </tr>
 </table>
+<h2>To use this version: </h2>
+<ul>
+<li> download the files to a folder named : Remenysugar-Allatmenhely</li>
+<li>open xampp start the apache and MySQL improt the first file named: "allatmenhely adatbázis kreálás.sql", secondly import: "allatmenhely adatbázis feltötés.sql"</li>
+<li> put the downloaded files into the xampp/htdocs folder</li>
+<li> open with this link: http://localhost/Remenysugar-Allatmenhely/remenysugar.html</li>
+</ul>
