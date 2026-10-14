@@ -176,3 +176,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const szuroGomb = document.getElementById("szuroGomb");
+    const szuroPanel = document.getElementById("szuroPanel");
+
+    if (szuroGomb && szuroPanel) {
+        szuroGomb.addEventListener("click", function () {
+            // Megnyitja vagy bezárja a panelt a .rejtett osztály cserélgetésével
+            szuroPanel.classList.toggle("rejtett");
+        });
+    }
+});
