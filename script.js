@@ -145,3 +145,34 @@ if (hamburgerGomb && navMenu) {
         });
     });
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const eleresKereso = document.getElementById("eleresKereso");
+    const allatKartyak = document.querySelectorAll(".allat-kartya");
+
+    if (eleresKereso) {
+        eleresKereso.addEventListener("input", function (e) {
+            const keresettSzo = e.target.value.toLowerCase().trim();
+
+            allatKartyak.forEach(kartya => {
+                const nev = kartya.getAttribute("data-nev") ? kartya.getAttribute("data-nev").toLowerCase() : "";
+                const tipus = kartya.getAttribute("data-tipus") ? kartya.getAttribute("data-tipus").toLowerCase() : "";
+                const teljesSzoveg = kartya.textContent.toLowerCase();
+
+                // Ha megegyezik a kereséssel (vagy üres a mező)
+                const talalat = keresettSzo === "" ||
+                                nev.includes(keresettSzo) ||
+                                tipus.includes(keresettSzo) ||
+                                teljesSzoveg.includes(keresettSzo);
+
+                if (talalat) {
+                    kartya.classList.remove("rejtett"); // Megjelenítés
+                } else {
+                    kartya.classList.add("rejtett");    // Elrejtés
+                }
+            });
+        });
+    }
+});
