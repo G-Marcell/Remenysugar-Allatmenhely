@@ -201,7 +201,6 @@ h1 span {
     display: flex;
     gap: 22px;
     flex-wrap: wrap;
-    margin-right: 52px;
 }
 
 .szurok button {
@@ -226,6 +225,7 @@ h1 span {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+
 }
 
 .allat-kartya {
@@ -743,4 +743,93 @@ h1 span {
     nav.nyitva {
         display: flex !important;
     }
+}
+
+
+/* --- EGYSZERŰ ÁLLATOS OLDAL STÍLUSAI --- */
+
+
+.egyszeru-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #f5f2eb;
+    margin-bottom:0 !important;
+    padding-bottom:10px !important;
+}
+
+.kozepso-kereso input {
+    width: 250px;
+    padding: 8px 15px;
+    border: 1px solid #bca982;
+    background: transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #303437;
+    outline: none;
+}
+
+.kozepso-kereso input::placeholder {
+    color: #858b8d;
+}
+
+.vissza-gomb {
+    text-decoration: none;
+    color: #303437;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.vissza-gomb:hover {
+    text-decoration: underline;
+}
+
+/* Mobilos igazítás, hogy ne csússzon szét kis képernyőn */
+@media (max-width: 768px) {
+    .egyszeru-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+    }
+    .kozepso-kereso input {
+        width: 100%;
+    }
+}
+
+
+.tartalom-keret {
+    display: block !important;
+    width: 100%;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+
+.allat-racs {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.allat-kartya {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Ezzel az osztállyal fogja a JS elrejteni a kártyákat, felülírva a meglévő CSS-t */
+.allat-kartya.rejtett {
+    display: none !important;
+}
+
+
+.allat-racs.fooldal-racs {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 50px;
+    box-sizing: border-box;
 }

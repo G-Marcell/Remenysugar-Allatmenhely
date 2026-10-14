@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remény Sugár Állatmenhely - Állatok</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="egyszeru-oldal">
+
+
+    <header class="egyszeru-header">
+        <div class="logo">
+            <span>🐾</span>
+            <div>
+                <h2>Remény Sugár</h2>
+                <p>ÁLLATMENHELY</p>
+            </div>
+        </div>
+
+        <!-- KÖZÉPSŐ KERESŐMEZŐ -->
+        <div class="kozepso-kereso">
+            <input type="text" id="eleresKereso" placeholder="Keresés....">
+        </div>
+
+        <a href="remenysugar.html" class="kereses">Vissza az oldalra →</a>
+
+    </header>
+
+
+    <main class="tartalom-keret">
+        <div class="allat-racs">
+            <!-- Az állatok kártyái ide kerülnek a JavaScript segítségével -->
+        </div>
+
+    </div>
+
+    <p class="galeria-megjegyzes">
+        Vidd a képre az egeret a részletekért, kattints a teljes adatlapért.
+    </p>
+</section>
+
+<div class="adatlap-hatter" id="adatlapHatter" aria-hidden="true">
+    <div class="adatlap" role="dialog" aria-modal="true"
+        aria-labelledby="adatlapNev">
+
+        <button class="adatlap-bezar" id="adatlapBezar"
+            type="button" aria-label="Bezárás">×</button>
+
+        <span class="adatlap-cimke" id="adatlapTipus"></span>
+        <h2 id="adatlapNev"></h2>
+        <p id="adatlapKor"></p>
+        <p id="adatlapErkezes"></p>
+
+        <h3>Személyiség</h3>
+        <p id="adatlapSzemelyiseg"></p>
+
+        <p class="adatlap-lablec">
+            Ismerd meg személyesen is leendő társadat!
+        </p>
+    </div>
+</div>
+    </section>
+
+
+</main>
+
+    <script src="api_script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
