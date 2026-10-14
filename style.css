@@ -133,7 +133,7 @@ h1 span {
 }
 
 .fo-gomb {
-    background-color: #343a3c;
+    background-color: #808588;
     color: white;
     padding: 18px 25px;
     text-decoration: none;
@@ -755,7 +755,7 @@ h1 span {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #f5f2eb;
+    background-color: #f1eee4;
     margin-bottom:0 !important;
     padding-bottom:10px !important;
 }
@@ -834,4 +834,83 @@ h1 span {
     padding: 0 50px;
     box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+    .allat-racs,
+    .allat-racs.fooldal-racs {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px !important;
+        gap: 20px !important;
+    }
+
+    .egyszeru-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px !important;
+    }
+
+    .kozepso-kereso input {
+        width: 100% !important;
+    }
+}
+
+/* Alapból rejtve számítógépen */
+.mobil-csak-gomb {
+    display: none !important;
+}
+
+/* Csak telefonon (768px alatt) jelenik meg gombként */
+@media (max-width: 768px) {
+    .mobil-csak-gomb {
+        display: block !important;
+        text-align: center;
+        width: 100%;
+        margin: 15px 0;
+        padding: 12px 20px;
+        background-color: #808588;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+}
+.egyszeru-oldal{
+
+background-color:#e2dccd;
+}
+
+
+.szuro-gomb {
+    padding: 10px 16px;
+    background-color: #4a3b32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.szuro-gomb:hover {
+    background-color: #5c4a3f;
+}
+
+
+.szuro-panel {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: absolute;
+    z-index: 100;
+}
+
+.szuro-panel.rejtett {
+    display: none !important;
+}
+
+
 
