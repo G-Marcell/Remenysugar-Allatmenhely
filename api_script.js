@@ -1,14 +1,30 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
     const oldal = window.location.pathname;
- // adat be olvasás (http://localhost/Remenysugar-Allatmenhely/api.php) ról 
-    const response = await fetch("http://localhost/Remenysugar-Allatmenhely/api.php");
-    const data = await response.json();
+
+
+    
+    async function apiRequest(action) {
+
+        const response = await fetch(
+            `http://localhost/Remenysugar-Allatmenhely/api.php?action=${encodeURIComponent(action)}`
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Hiba történt");
+        }
+
+        return data;
+    }
+
+
 
     if (oldal.includes("remenysugar.html")) {
 
-        const fajok = data.fajok;
-        const allatok_limit = data.allatok_limit;
+        const fajok = await apiRequest("getDistinctFajok");
+        const allatok_limit = await apiRequest("getLimitedAnimals");
 
         //fajok alapján gombok létrehozása a szűrőhöz
 
@@ -92,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     else if (oldal.includes("allatok.html")) 
     {
 
-        const allatok = data.allatok;
+        const allatok = await apiRequest("getAllAnimals");
 
         // kártyák létrehozása az allatok alapján
         const allatKartyaContainer = document.querySelector(".allat-racs");
@@ -142,10 +158,64 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
+function submitForm() {
+
+    type = document.getElementsByClassName("ful aktiv")[0].textContent;
+    nev = document.getElementById("teljesNev").value;
+    telefon = document.getElementById("telefonMezo").value;
+    email = document.getElementById("emailMezo").value;
+    szuletesiDatum = document.getElementById("szuletesiDatum").value;
+    lakcim = document.getElementById("lakcim").value;
+    adatvedelem = document.getElementById("adatvedelem");
+
+    if (adatvedelem.checked != true) {
+        alert("Kérjük, fogadd el az adatvédelmi nyilatkozatot!");
+        return false;
+    }
+
+    if (nev.value == "" || telefon.value == "" || email.value == "" || szuletesiDatum.value == "" || lakcim.value == "") {
+        alert("Kérjük, töltsd ki az összes mezőt!");
+        return false;
+    }
+
+    const formData = {
+        type: type,
+        nev: nev,
+        telefon: telefon,
+        email: email,
+        szuletesiDatum: szuletesiDatum,
+        lakcim: lakcim
+    };
+
+
+    //Beérkező adatok vizsgálata küldés elött
 
 
 
+    // Küldés az API-nak
 
+    fetch("http://localhost/Remenysugar-Allatmenhely/api.php?action=handleApplication", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("A form beküldése sikeres!");
+            document.getElementById("jelentkezesForm").reset();
+        } else {
+            alert("Hiba történt a form beküldésekor.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Hiba történt a form beküldésekor.");
+    });
+
+}
 
 
 

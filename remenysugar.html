@@ -157,25 +157,24 @@
         </div>
     </div>
 
-    <div class="onkentes-jobb">
+    <div class="onkentes-jobb" id="onkentesForm">
 
 
-
-
+    
         <div class="fulek">
-            <button class="ful aktiv" type="button">ÖNKÉNTESSÉG</button>
-            <button class="ful" type="button">IDEIGLENES BEFOGADÁS</button>
+            <button class="ful aktiv" type="button" value="önkéntes">ÖNKÉNTESSÉG</button>
+            <button class="ful" type="button" value="ideiglenes">IDEIGLENES BEFOGADÁS</button>
         </div>
 
         <div class="urlap-doboz">
             <h3>Önkéntes jelentkezés</h3>
             <p class="urlap-alcim">Töltsd ki az űrlapot, és hamarosan keresünk a részletekkel.</p>
 
-            <form class="jelentkezes-form">
+            <form class="jelentkezes-form" id="jelentkezesForm">
                 <div class="input-sor">
                     <div class="input-csoport">
                         <label>TELJES NÉV</label>
-                        <input type="text" placeholder="Példa Petra" required>
+                        <input type="text" id="teljesNev" placeholder="Példa Petra" required>
                     </div>
                     <div class="input-csoport">
                         <label>TELEFONSZÁM</label>
@@ -186,17 +185,17 @@
                 <div class="input-sor">
                     <div class="input-csoport">
                         <label>E-MAIL CÍM</label>
-                        <input type="email" placeholder="pelda@email.hu" required>
+                        <input type="email" id="emailMezo" placeholder="pelda@email.hu" required>
                     </div>
                     <div class="input-csoport">
                         <label>SZÜLETÉSI IDŐ</label>
-                        <input type="date" required>
+                        <input type="date" id="szuletesiDatum" required>
                     </div>
                 </div>
 
                 <div class="input-csoport teljes-szelesseg">
                     <label>LAKCÍM</label>
-                    <input type="text" placeholder="Irányítószám, település, utca, házszám" required>
+                    <input type="text" id="lakcim" placeholder="Irányítószám, település, utca, házszám" required>
                 </div>
 
                 <div class="checkbox-csoport">
@@ -204,7 +203,8 @@
                     <label for="adatvedelem">Elfogadom az adatvédelmi tájékoztatóban foglaltakat.</label>
                 </div>
 
-                <button type="submit" class="fo-gomb beküldés-gomb">JELENTKEZÉS ELKÜLDÉSE →</button>
+                <button type="button" class="fo-gomb beküldés-gomb" onclick="submitForm()">JELENTKEZÉS ELKÜLDÉSE →</button>
+                
             </form>
         </div>
     </div>
