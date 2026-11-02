@@ -152,22 +152,30 @@ function handleApplication($conn) {
     $input = file_get_contents("php://input");
     $data = json_decode($input, true);
 
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo json_encode(["error" => "Hibás JSON formátum"]);
+        exit;
+    }
 
+    // Jelszó hash-elése
+    $jelszo_hash = password_hash($data["jelszo"], PASSWORD_BCRYPT);
 
     $stmt = $conn->prepare(
-    "INSERT INTO jelentkezők (teljes_nev,email,telefon,lakcim,szuletesi_datum,szerep)
-     VALUES (? ,? ,? ,? ,? ,? )"
+        "INSERT INTO onkentesek
+        (teljes_nev, email, jelszo_hash, telefon, lakcim, iranyitoszam, szerep, statusz)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
-
     $stmt->bind_param(
-        "ssssss",
-        $data["nev"],
+        "ssssssss",
+        $data["teljes_nev"],
         $data["email"],
+        $jelszo_hash,
         $data["telefon"],
         $data["lakcim"],
-        $data["szuletesiDatum"],
-        $data["type"]
+        $data["iranyitoszam"],
+        $data["szerep"],
+        $data["statusz"]
     );
     if ($stmt->execute()) {
         echo json_encode(["success" => true]);

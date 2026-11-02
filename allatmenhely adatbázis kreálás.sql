@@ -272,15 +272,16 @@ CREATE TABLE onkentesek (
     lakcim VARCHAR(255) NULL,
     iranyitoszam CHAR(4) NULL,
     szerep ENUM(
-        'Jelentkező',
-        'Alkalmazott',
-        'Önkéntes',
-        'Admin'
-    ) NOT NULL DEFAULT 'Önkéntes',
+        'alkalmazott',
+        'önkéntesség',
+        'ideiglenes befogadás',
+        'admin'
+    ) NOT NULL DEFAULT 'önkéntesség',
     statusz ENUM(
-        'Aktív',
-        'Inaktív'
-    ) NOT NULL DEFAULT 'Aktív'
+        'jelentkező',
+        'aktív',
+        'inaktív'
+    ) NOT NULL DEFAULT 'aktív'
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_hungarian_ci;

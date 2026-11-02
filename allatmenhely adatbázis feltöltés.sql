@@ -53,12 +53,12 @@ VALUES
 INSERT INTO onkentesek
 (teljes_nev, email, jelszo_hash, telefon, lakcim, iranyitoszam, szerep, statusz)
 VALUES
-('Tóth Réka', 'reka.toth@example.com', 'teszt_hash_05', '+36 30 111 2222', 'Duna utca 5.', '2310', 'Önkéntes', 'Aktív'),
-('Kiss Bence', 'bence.kiss@example.com', 'teszt_hash_06', '+36 20 222 3333', 'Petőfi utca 7.', '2310', 'Önkéntes', 'Aktív'),
-('Varga Lilla', 'lilla.varga@example.com', 'teszt_hash_07', '+36 70 333 4444', 'Iskola utca 9.', '2310', 'Alkalmazott', 'Aktív'),
-('Molnár Dávid', 'david.molnar@example.com', 'teszt_hash_08', '+36 30 444 5555', 'Árpád utca 11.', '2310', 'Önkéntes', 'Inaktív'),
-('Farkas Nóra', 'nora.farkas@example.com', 'teszt_hash_09', '+36 20 555 6666', 'Tavasz utca 14.', '2310', 'Önkéntes', 'Aktív'),
-('Balogh Márk', 'mark.balogh@example.com', 'teszt_hash_10', '+36 70 666 7777', 'Kert utca 18.', '2310', 'Admin', 'Aktív');
+('Tóth Réka', 'reka.toth@example.com', 'teszt_hash_05', '+36 30 111 2222', 'Duna utca 5.', '2310', 'önkéntesség', 'Aktív'),
+('Kiss Bence', 'bence.kiss@example.com', 'teszt_hash_06', '+36 20 222 3333', 'Petőfi utca 7.', '2310', 'önkéntesség', 'Aktív'),
+('Varga Lilla', 'lilla.varga@example.com', 'teszt_hash_07', '+36 70 333 4444', 'Iskola utca 9.', '2310', 'alkalmazott', 'Aktív'),
+('Molnár Dávid', 'david.molnar@example.com', 'teszt_hash_08', '+36 30 444 5555', 'Árpád utca 11.', '2310', 'önkéntesség', 'Inaktív'),
+('Farkas Nóra', 'nora.farkas@example.com', 'teszt_hash_09', '+36 20 555 6666', 'Tavasz utca 14.', '2310', 'önkéntesség', 'Aktív'),
+('Balogh Márk', 'mark.balogh@example.com', 'teszt_hash_10', '+36 70 666 7777', 'Kert utca 18.', '2310', 'admin', 'Aktív');
 
 -- ---------------------------------------------------------
 -- insert to orvosi_ellatas

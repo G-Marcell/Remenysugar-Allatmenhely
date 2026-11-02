@@ -160,12 +160,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 function submitForm() {
 
-    type = document.getElementsByClassName("ful aktiv")[0].textContent;
+    type = document.getElementsByClassName("ful aktiv")[0].textContent.toLowerCase();
     nev = document.getElementById("teljesNev").value;
     telefon = document.getElementById("telefonMezo").value;
     email = document.getElementById("emailMezo").value;
     szuletesiDatum = document.getElementById("szuletesiDatum").value;
+    jelszó = document.getElementById("jelszo").value;
+    jelszoEllenorzes = document.getElementById("jelszoIsmet").value;
     lakcim = document.getElementById("lakcim").value;
+    iranyitoszam = null;
     adatvedelem = document.getElementById("adatvedelem");
 
     if (adatvedelem.checked != true) {
@@ -173,18 +176,36 @@ function submitForm() {
         return false;
     }
 
-    if (nev.value == "" || telefon.value == "" || email.value == "" || szuletesiDatum.value == "" || lakcim.value == "") {
-        alert("Kérjük, töltsd ki az összes mezőt!");
+    const matches = lakcim.match(/(?<!\d)\d{4}(?!\d)/);
+
+    if (matches) {
+        iranyitoszam = matches[0];
+        lakcim = lakcim.replace(iranyitoszam, '').trim();
+
+        console.log(iranyitoszam);
+        console.log(lakcim);
+    }
+
+    if (nev.value == "" || telefon.value == "" || email.value == "" || szuletesiDatum.value == "" || lakcim.value == "" || iranyitoszam.value == "") {
+        alert("Kérjük, töltsd ki az összes mezőt! Az irányítószámot a lakcím mezőből automatikusan kinyerjük, így azt külön nem kell megadni.");
         return false;
     }
 
+    if (jelszó != jelszoEllenorzes) {
+        alert("A jelszavak nem egyeznek!");
+        return false;
+    }
+
+
     const formData = {
-        type: type,
-        nev: nev,
-        telefon: telefon,
+        teljes_nev: nev,
         email: email,
-        szuletesiDatum: szuletesiDatum,
-        lakcim: lakcim
+        jelszo: jelszó,
+        telefon: telefon,
+        lakcim: lakcim,
+        iranyitoszam: iranyitoszam,
+        szerep: type,
+        statusz: "jelentkező"
     };
 
 
