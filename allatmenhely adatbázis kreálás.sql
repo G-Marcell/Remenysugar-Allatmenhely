@@ -272,6 +272,7 @@ CREATE TABLE onkentesek (
     lakcim VARCHAR(255) NULL,
     iranyitoszam CHAR(4) NULL,
     szerep ENUM(
+        'Jelentkező',
         'Alkalmazott',
         'Önkéntes',
         'Admin'

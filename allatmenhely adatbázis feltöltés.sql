@@ -10,41 +10,42 @@ INSERT INTO animals
 VALUES
 
 -- Kutyák (faj_id = 1)
-('789012345678901', 'Zokni', 1, 3, 'Fiú', '2021-04-15', 'Nagy', 'Gazdikereső', 'https://example.com/zokni.jpg', '2023-03-15', 'Barátságos, játékos kutya, aki szereti a sétákat és keresi szerető gazdáját.'),
-('901234567890123', 'Rex', 1, 4, 'Fiú', '2019-07-11', 'Nagy', 'Karantén', 'https://example.com/rex.jpg', '2024-02-11', 'Figyelmes, energikus kutya, aki türelmes és gondoskodó gazdára vár.'),
-('556789012345678', 'Bodri', 1, 2, 'Fiú', '2020-10-30', 'Nagy', 'Gazdikereső', 'https://example.com/bodri.jpg', '2023-08-30', 'Kedves és hűséges kutya, aki szívesen tölti az idejét emberek társaságában.'),
-('778901234567890', 'Luna', 1, 5, 'Lány', '2022-06-18', 'Közepes', 'Gazdikereső', 'https://example.com/luna.jpg', '2024-01-18', 'Érdeklődő és játékos kutya, aki szeretetteljes otthonra vágyik.'),
-('889012345678901', 'Max', 1, 6, 'Fiú', '2023-01-25', 'Közepes', 'Gazdikereső', 'https://example.com/max.jpg', '2024-05-25', 'Vidám és kíváncsi kutya, aki szeret felfedezni és játszani.'),
-('990123456789012', 'Bella', 1, 7, 'Lány', '2021-09-03', 'Kicsi', 'Gazdikereső', 'https://example.com/bella.jpg', '2023-06-03', 'Szelíd és ragaszkodó kutya, aki nyugodt, szerető otthont keres.'),
+('789012345678901', 'Zokni', 1, 3, 'Fiú', '2021-04-15', 'Nagy', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Zokni.avif', '2023-03-15', 'Barátságos, játékos kutya, aki szereti a sétákat és keresi szerető gazdáját.'),
+('901234567890123', 'Rex', 1, 4, 'Fiú', '2019-07-11', 'Nagy', 'Karantén', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Rex.jpg', '2024-02-11', 'Figyelmes, energikus kutya, aki türelmes és gondoskodó gazdára vár.'),
+('556789012345678', 'Bodri', 1, 2, 'Fiú', '2020-10-30', 'Nagy', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Bodri.jpg', '2023-08-30', 'Kedves és hűséges kutya, aki szívesen tölti az idejét emberek társaságában.'),
+('778901234567890', 'Luna', 1, 5, 'Lány', '2022-06-18', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Luna.jpg', '2024-01-18', 'Érdeklődő és játékos kutya, aki szeretetteljes otthonra vágyik.'),
+('889012345678901', 'Max', 1, 6, 'Fiú', '2023-01-25', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Max.jpg', '2024-05-25', 'Vidám és kíváncsi kutya, aki szeret felfedezni és játszani.'),
+('990123456789012', 'Bella', 1, 7, 'Lány', '2021-09-03', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Bella.jpg', '2023-06-03', 'Szelíd és ragaszkodó kutya, aki nyugodt, szerető otthont keres.'),
 
 -- Macskák (faj_id = 2)
-('890123456789012', 'Mici', 2, 6, 'Lány', '2022-01-20', 'Kicsi', 'Gazdikereső', 'https://example.com/mici.jpg', '2023-04-20', 'Kedves, kíváncsi macska, aki szívesen pihen egy kényelmes helyen.'),
-('667890123456789', 'Hópihe', 2, 7, 'Lány', '2024-02-12', 'Kicsi', 'Karantén', 'https://example.com/hopihe.jpg', '2025-01-12', 'Csendes, érdeklődő macska, akinek nyugodt környezetre van szüksége.'),
-('101234567890123', 'Cirmi', 2, 8, 'Fiú', '2020-08-14', 'Kicsi', 'Gazdikereső', 'https://example.com/cirmi.jpg', '2022-11-14', 'Önálló, kíváncsi macska, aki szeret felfedezni és pihenni.'),
-('212345678901234', 'Nala', 2, 9, 'Lány', '2023-04-06', 'Kicsi', 'Gazdikereső', 'https://example.com/nala.jpg', '2024-03-06', 'Játékos, érdeklődő macska, aki szerető családot keres.'),
-('323456789012345', 'Kormi', 2, 10, 'Fiú', '2021-11-22', 'Közepes', 'Gazdikereső', 'https://example.com/kormi.jpg', '2023-09-22', 'Nyugodt, barátságos macska, aki szívesen pihen gazdája közelében.'),
+('890123456789012', 'Mici', 2, 6, 'Lány', '2022-01-20', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Mici.jpg', '2023-04-20', 'Kedves, kíváncsi macska, aki szívesen pihen egy kényelmes helyen.'),
+('667890123456789', 'Hópihe', 2, 7, 'Lány', '2024-02-12', 'Kicsi', 'Karantén', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Hópihe.jpg', '2025-01-12', 'Csendes, érdeklődő macska, akinek nyugodt környezetre van szüksége.'),
+('101234567890123', 'Cirmi', 2, 8, 'Fiú', '2020-08-14', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Cirmi.jpg', '2022-11-14', 'Önálló, kíváncsi macska, aki szeret felfedezni és pihenni.'),
+('212345678901234', 'Nala', 2, 9, 'Lány', '2023-04-06', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Nala.jpg', '2024-03-06', 'Játékos, érdeklődő macska, aki szerető családot keres.'),
+('323456789012345', 'Kormi', 2, 10, 'Fiú', '2021-11-22', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Kormi.jpg', '2023-09-22', 'Nyugodt, barátságos macska, aki szívesen pihen gazdája közelében.'),
 
 -- Hörcsögök (faj_id = 3)
-('112345678901234', 'Pamacs', 3, 13, 'Lány', '2023-05-09', 'Kicsi', 'Gazdikereső', 'https://example.com/pamacs.jpg', '2024-02-09', 'Apró, kíváncsi hörcsög, aki szívesen fedezi fel a környezetét.'),
-('434567890123456', 'Mogyoró', 3, 14, 'Fiú', '2024-01-12', 'Kicsi', 'Gazdikereső', 'https://example.com/mogyoro.jpg', '2024-09-12', 'Élénk, érdeklődő hörcsög, akinek biztonságos, tágas otthonra van szüksége.'),
-('545678901234567', 'Gombóc', 3, 15, 'Lány', '2023-08-20', 'Kicsi', 'Gazdikereső', 'https://example.com/gomboc.jpg', '2024-04-20', 'Kíváncsi kis hörcsög, aki szeret felfedezni és mozogni.'),
+('112345678901234', 'Pamacs', 3, 13, 'Lány', '2023-05-09', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Pamacs.jpg', '2024-02-09', 'Apró, kíváncsi hörcsög, aki szívesen fedezi fel a környezetét.'),
+('434567890123456', 'Mogyoró', 3, 14, 'Fiú', '2024-01-12', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Mogyoró.jpg', '2024-09-12', 'Élénk, érdeklődő hörcsög, akinek biztonságos, tágas otthonra van szüksége.'),
+('545678901234567', 'Gombóc', 3, 15, 'Lány', '2023-08-20', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Gombóc.jpg', '2024-04-20', 'Kíváncsi kis hörcsög, aki szeret felfedezni és mozogni.'),
 
 -- Nyulak (faj_id = 4)
-('223456789012345', 'Tappancs', 4, 17, 'Fiú', '2022-09-17', 'Közepes', 'Gazdikereső', 'https://example.com/tappancs.jpg', '2023-05-17', 'Szelíd, kíváncsi nyuszi, aki türelmes gondoskodásra és biztonságos helyre vágyik.'),
-('656789012345678', 'Hókusz', 4, 18, 'Fiú', '2023-02-11', 'Kicsi', 'Gazdikereső', 'https://example.com/hokusz.jpg', '2023-10-11', 'Érdeklődő nyuszi, aki szeret felfedezni és pihenni.'),
-('767890123456789', 'Pihe', 4, 19, 'Lány', '2022-12-05', 'Közepes', 'Gazdikereső', 'https://example.com/pihe.jpg', '2023-07-05', 'Nyugodt, kedves nyuszi, aki gondoskodó otthonra vár.'),
+('223456789012345', 'Tappancs', 4, 17, 'Fiú', '2022-09-17', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Tappancs.jpg', '2023-05-17', 'Szelíd, kíváncsi nyuszi, aki türelmes gondoskodásra és biztonságos helyre vágyik.'),
+('656789012345678', 'Hókusz', 4, 18, 'Fiú', '2023-02-11', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Hókusz.webp', '2023-10-11', 'Érdeklődő nyuszi, aki szeret felfedezni és pihenni.'),
+('767890123456789', 'Pihe', 4, 19, 'Lány', '2022-12-05', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Pihe.jpg', '2023-07-05', 'Nyugodt, kedves nyuszi, aki gondoskodó otthonra vár.'),
 
 -- Tengerimalacok (faj_id = 5)
-('445678901234567', 'Morzsa', 5, 21, 'Fiú', '2023-03-22', 'Kicsi', 'Gazdikereső', 'https://example.com/morzsa.jpg', '2023-11-22', 'Barátságos, érdeklődő tengerimalac, akinek társaságra és megfelelő gondoskodásra van szüksége.'),
-('878901234567890', 'Bogyó', 5, 22, 'Lány', '2022-07-19', 'Kicsi', 'Gazdikereső', 'https://example.com/bogyo.jpg', '2023-03-19', 'Kíváncsi tengerimalac, aki nyugodt, biztonságos otthonra vár.'),
+('445678901234567', 'Morzsa', 5, 21, 'Fiú', '2023-03-22', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Morzsa.jpg', '2023-11-22', 'Barátságos, érdeklődő tengerimalac, akinek társaságra és megfelelő gondoskodásra van szüksége.'),
+('878901234567890', 'Bogyó', 5, 22, 'Lány', '2022-07-19', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Bogyó.jpg', '2023-03-19', 'Kíváncsi tengerimalac, aki nyugodt, biztonságos otthonra vár.'),
 
 -- Madarak (faj_id = 6)
-('334567890123456', 'Csipike', 6, 25, 'Lány', '2021-12-01', 'Kicsi', 'Gazdisodott', 'https://example.com/csipike.jpg', '2022-08-01', 'Élénk, érdeklődő madár, amely megfelelő gondoskodást és biztonságos környezetet igényel.'),
-('989012345678901', 'Fütyi', 6, 26, 'Fiú', '2022-05-14', 'Kicsi', 'Gazdikereső', 'https://example.com/futyi.jpg', '2023-01-14', 'Kíváncsi madár, aki megfelelő méretű kalitkát és napi törődést igényel.'),
+('334567890123456', 'Csipike', 6, 25, 'Lány', '2021-12-01', 'Kicsi', 'Gazdisodott', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Csipike.jpg', '2022-08-01', 'Élénk, érdeklődő madár, amely megfelelő gondoskodást és biztonságos környezetet igényel.'),
+('989012345678901', 'Fütyi', 6, 26, 'Fiú', '2022-05-14', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Fütyi.jpg', '2023-01-14', 'Kíváncsi madár, aki megfelelő méretű kalitkát és napi törődést igényel.'),
 
 -- Egyéb állatok (faj_id = 7)
-('109876543210987', 'Tekla', 7, 30, 'Lány', '2020-06-21', 'Kicsi', 'Gazdikereső', 'https://example.com/tekla.jpg', '2022-02-21', 'Érdeklődő teknős, amelynek fajának megfelelő élőhelyre és gondoskodásra van szüksége.'),
-('119876543210987', 'Samu', 7, 31, 'Fiú', '2022-03-08', 'Közepes', 'Gazdikereső', 'https://example.com/samu.jpg', '2023-01-08', 'Kíváncsi, aktív állat, amelynek biztonságos, fajának megfelelő élőhelyre van szüksége.');
+('109876543210987', 'Tekla', 7, 30, 'Lány', '2020-06-21', 'Kicsi', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Tekla.jpg', '2022-02-21', 'Érdeklődő teknős, amelynek fajának megfelelő élőhelyre és gondoskodásra van szüksége.'),
+('119876543210987', 'Samu', 7, 31, 'Fiú', '2022-03-08', 'Közepes', 'Gazdikereső', 'https://raw.githubusercontent.com/G-Marcell/Remenysugar-Allatmenhely/main/animal_pictures/Samu.jpg', '2023-01-08', 'Kíváncsi, aktív állat, amelynek biztonságos, fajának megfelelő élőhelyre van szüksége.');-- ---------------------------------------------------------
+
 -- ---------------------------------------------------------
 -- insert to onkentesek
 -- ---------------------------------------------------------
@@ -72,13 +73,13 @@ INSERT INTO orvosi_ellatas
 VALUES
 (6, 'Vizsgálat', 'Általános kontroll', '2026-09-12', '2027-03-12', 'Dr. Nagy Éva', 'Kontrollvizsgálat rendben.'),
 (7, 'Oltás', 'Kölyökkori oltás', '2026-09-18', '2027-09-18', 'Dr. Kiss András', 'Oltás beadva.'),
-(8, 'Kezelés', 'Bőr ellenőrzése', '2026-09-21', '2026-10-21', 'Dr. Nagy Éva', 'Utóellenőrzés szükséges.'),
-(9, 'Parazitamentesítés', 'Paraziták elleni kezelés', '2026-09-22', '2026-12-22', 'Dr. Kiss András', 'Kezelés elvégezve.'),
+(8, 'Kezelés', 'Bőr ellenőrzése', '2026-09-21', '2027-10-21', 'Dr. Nagy Éva', 'Utóellenőrzés szükséges.'),
+(9, 'Parazitamentesítés', 'Paraziták elleni kezelés', '2026-09-22', '2027-12-22', 'Dr. Kiss András', 'Kezelés elvégezve.'),
 (10, 'Vizsgálat', 'Általános állapotfelmérés', '2026-09-23', '2027-03-23', 'Dr. Nagy Éva', 'Az állat állapota megfelelő.'),
 (11, 'Oltás', 'Éves oltás', '2026-09-24', '2027-09-24', 'Dr. Kiss András', 'Oltási könyv frissítve.'),
-(12, 'Kezelés', 'Általános kezelés', '2026-09-26', '2026-10-26', 'Dr. Nagy Éva', 'Kontroll javasolt.'),
+(12, 'Kezelés', 'Általános kezelés', '2026-09-26', '2027-10-26', 'Dr. Nagy Éva', 'Kontroll javasolt.'),
 (13, 'Vizsgálat', 'Megelőző vizsgálat', '2026-09-27', '2027-03-27', 'Dr. Kiss András', 'Állapotfelmérés megtörtént.'),
-(14, 'Parazitamentesítés', 'Megelőző kezelés', '2026-09-29', '2026-12-29', 'Dr. Nagy Éva', 'Következő kezelés később esedékes.');
+(14, 'Parazitamentesítés', 'Megelőző kezelés', '2026-09-29', '2027-12-29', 'Dr. Nagy Éva', 'Következő kezelés később esedékes.');
 
 
 -- ---------------------------------------------------------
