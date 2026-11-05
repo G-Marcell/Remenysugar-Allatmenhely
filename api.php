@@ -83,13 +83,17 @@ function getAllAnimals($conn) {
 function handleRequest() {
     header("Content-Type: application/json; charset=utf-8");
 
-    $action = $_GET["action"] ?? "";
+    loadEnv(__DIR__ . "/allatmenhely.env");
 
+    $action = isset($_GET['action']) ? $_GET['action'] : '';
+
+    // Csatlakozás a környezeti változókkal
     $conn = new mysqli(
-        "127.0.0.1",
-        "root",
-        "",
-        "allatmenhely"
+        $_ENV['DB_HOST'],
+        $_ENV['DB_USER'],
+        $_ENV['DB_PASSWORD'],
+        $_ENV['DB_NAME'],
+        (int)$_ENV['DB_PORT']
     );
 
     if ($conn->connect_error) {
@@ -186,6 +190,17 @@ function handleApplication($conn) {
 
     $stmt->close();
 }
+
+function loadEnv($path) {
+    if (!file_exists($path)) return;
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        list($name, $value) = explode('=', $line, 2);
+        $_ENV[trim($name)] = trim($value);
+    }
+}
+
 
 
 // Ezt a fájl végén egyszer hívjuk meg.
