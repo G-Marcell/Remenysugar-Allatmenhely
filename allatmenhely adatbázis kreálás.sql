@@ -175,11 +175,9 @@ CREATE TABLE animals (
     animal_id INT AUTO_INCREMENT PRIMARY KEY,
 
     chip_szam VARCHAR(15) NOT NULL UNIQUE,
-
     nev VARCHAR(100) NOT NULL,
 
     faj_id INT NOT NULL,
-
     fajta_id INT NULL,
 
     nem ENUM(
@@ -202,6 +200,8 @@ CREATE TABLE animals (
     ) NOT NULL DEFAULT 'Karantén',
 
     kep_url VARCHAR(500) NULL,
+    erkezes DATE NULL,
+    leiras TEXT NULL,
 
     CONSTRAINT fk_animals_faj
         FOREIGN KEY (faj_id)
@@ -272,14 +272,16 @@ CREATE TABLE onkentesek (
     lakcim VARCHAR(255) NULL,
     iranyitoszam CHAR(4) NULL,
     szerep ENUM(
-        'Alkalmazott',
-        'Önkéntes',
-        'Admin'
-    ) NOT NULL DEFAULT 'Önkéntes',
+        'alkalmazott',
+        'önkéntesség',
+        'ideiglenes befogadás',
+        'admin'
+    ) NOT NULL DEFAULT 'önkéntesség',
     statusz ENUM(
-        'Aktív',
-        'Inaktív'
-    ) NOT NULL DEFAULT 'Aktív'
+        'jelentkező',
+        'aktív',
+        'inaktív'
+    ) NOT NULL DEFAULT 'aktív'
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_hungarian_ci;
