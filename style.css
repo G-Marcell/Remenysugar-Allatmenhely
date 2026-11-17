@@ -133,7 +133,7 @@ h1 span {
 }
 
 .fo-gomb {
-    background-color: #808588;
+    background-color: #343a3c;
     color: white;
     padding: 18px 25px;
     text-decoration: none;
@@ -147,7 +147,6 @@ h1 span {
     font-size: 13px;
     font-weight: bold;
 }
-```css
 /* GAZDIRA VARO ALLATOK */
 
 .gazdira-var {
@@ -537,7 +536,7 @@ h1 span {
 /* --- ÖNKÉNTESSÉG SZEKCIÓ --- */
 .onkentes-szekcio {
     display: flex;
-    background-color: #e9e2d2; /* Hasonló a kezdőlap bal oldali hátteréhez */
+    background-color: #e9e2d2; 
     min-height: 700px;
 }
 
@@ -582,6 +581,7 @@ h1 span {
     padding: 60px 7%;
     display: flex;
     flex-direction: column;
+    margin:0 auto;
 }
 
 .fulek {
@@ -717,7 +717,7 @@ h1 span {
     color: #303437;
 }
 
-/* Mobilos nézet (1000px alatt) */
+
 
 @media (max-width: 1000px) {
     .hamburger {
@@ -755,7 +755,7 @@ h1 span {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #f1eee4;
+    background-color: #f5f2eb;
     margin-bottom:0 !important;
     padding-bottom:10px !important;
 }
@@ -786,7 +786,7 @@ h1 span {
     text-decoration: underline;
 }
 
-/* Mobilos igazítás, hogy ne csússzon szét kis képernyőn */
+
 @media (max-width: 768px) {
     .egyszeru-header {
         flex-direction: column;
@@ -819,7 +819,7 @@ h1 span {
     visibility: visible !important;
     opacity: 1 !important;
 }
-/* Ezzel az osztállyal fogja a JS elrejteni a kártyákat, felülírva a meglévő CSS-t */
+
 .allat-kartya.rejtett {
     display: none !important;
 }
@@ -835,82 +835,296 @@ h1 span {
     box-sizing: border-box;
 }
 
+.adatlap-hatter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.adatlap-hatter.rejtett {
+    display: none !important;
+}
+
+
+.reszletes-adatlap-kontener {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+.adatlap-fejlec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.vissza-gomb {
+    background: #4a3b32;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.vissza-gomb:hover {
+    background: #5c4a3f;
+}
+
+.adatlap-cimke {
+    background: #e2d7cd;
+    color: #4a3b32;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.adatlap-tartalom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.adatlap-kep-doboz img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.adatlap-info-doboz h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #2c2c2c;
+}
+
+.tulajdonsagok-lista p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.szemelyiseg-szoveg {
+    line-height: 1.6;
+    color: #444;
+    background: #fdfbf7;
+    padding: 15px;
+    border-left: 4px solid #4a3b32;
+    border-radius: 4px;
+}
+
+/* Örökbefogadás gomb */
+.orokbefogad-gomb {
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+
+.orokbefogad-gomb:hover {
+    background-color: #b49508;
+}
+
+
 @media (max-width: 768px) {
-    .allat-racs,
+    .adatlap-tartalom-grid {
+        grid-template-columns: 1fr;
+    }
+    .adatlap-kep-doboz img {
+        height: 250px;
+    }
+}
+.adatlap-hatter {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+
+.adatlap-hatter.rejtett {
+    display: none !important;
+}
+
+
+.reszletes-adatlap-kontener {
+    background: #ffffff !important;
+    width: 90% !important;
+    max-width: 1000px !important;
+    max-height: 90vh !important;
+    border-radius: 12px !important;
+    padding: 30px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+}
+
+
+.adatlap-fejlec {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 2px solid #eee !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 20px !important;
+}
+
+.vissza-gomb {
+    background: #4a3b32 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 10px 18px !important;
+    border-radius: 6px !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+}
+
+.vissza-gomb:hover {
+    background: #5c4a3f !important;
+}
+
+.adatlap-cimke {
+    background: #e2d7cd !important;
+    color: #4a3b32 !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+}
+
+
+.adatlap-tartalom-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+    align-items: start !important;
+}
+
+.adatlap-kep-doboz img {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+}
+
+.adatlap-info-doboz h1 {
+    margin-top: 0 !important;
+    font-size: 32px !important;
+    color: #2c2c2c !important;
+}
+
+.tulajdonsagok-lista p {
+    font-size: 16px !important;
+    margin: 8px 0 !important;
+    color: #555 !important;
+}
+
+.szemelyiseg-szoveg {
+    line-height: 1.6 !important;
+    color: #444 !important;
+    background: #fdfbf7 !important;
+    padding: 15px !important;
+    border-left: 4px solid #4a3b32 !important;
+    border-radius: 4px !important;
+}
+
+
+.orokbefogad-gomb {
+    width: 100% !important;
+    background-color: #b49508 !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px 20px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    margin-top: 20px !important;
+    transition: background 0.2s !important;
+}
+
+.orokbefogad-gomb:hover {
+    background-color: #219150 !important;
+}
+
+
+@media (max-width: 768px) {
+    .adatlap-tartalom-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .adatlap-kep-doboz img {
+        height: 250px !important;
+    }
+}
+
+.vissza-mobil-gomb {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .vissza-mobil-gomb {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        background-color: #f1f1f1;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
     .allat-racs.fooldal-racs {
         grid-template-columns: 1fr !important;
         padding: 0 15px !important;
-        gap: 20px !important;
-    }
-
-    .egyszeru-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px !important;
-    }
-
-    .kozepso-kereso input {
-        width: 100% !important;
     }
 }
-
-/* Alapból rejtve számítógépen */
-.mobil-csak-gomb {
-    display: none !important;
-}
-
-/* Csak telefonon (768px alatt) jelenik meg gombként */
-@media (max-width: 768px) {
-    .mobil-csak-gomb {
-        display: block !important;
-        text-align: center;
-        width: 100%;
-        margin: 15px 0;
-        padding: 12px 20px;
-        background-color: #808588;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        box-sizing: border-box;
-    }
-}
-.egyszeru-oldal{
-
-background-color:#e2dccd;
-}
-
-
-.szuro-gomb {
-    padding: 10px 16px;
-    background-color: #4a3b32;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.szuro-gomb:hover {
-    background-color: #5c4a3f;
-}
-
-
-.szuro-panel {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    position: absolute;
-    z-index: 100;
-}
-
-.szuro-panel.rejtett {
-    display: none !important;
-}
-
-
-
