@@ -83,9 +83,27 @@ function getAllAnimals($conn) {
 function handleRequest() {
     header("Content-Type: application/json; charset=utf-8");
 
-    loadEnv(__DIR__ . "/allatmenhely.env");
-
     $action = isset($_GET['action']) ? $_GET['action'] : '';
+
+    $cacheConfig = [
+        'getDistinctFajok'  => 300, 
+        'getLimitedAnimals' => 300,  
+        'getAllAnimals'     => 300   
+    ];
+
+    $cacheDir = __DIR__ . '/cache';
+    $cacheFile = $cacheDir . '/' . $action . '.json';
+
+
+    if (isset($cacheConfig[$action]) && file_exists($cacheFile)) {
+        $age = time() - filemtime($cacheFile);
+        if ($age < $cacheConfig[$action]) {
+            readfile($cacheFile);
+            return;
+        }
+    }
+
+    loadEnv(__DIR__ . "/allatmenhely.env");
 
     // Csatlakozás a környezeti változókkal
     $conn = new mysqli(
@@ -123,10 +141,23 @@ function handleRequest() {
                 $conn->close();
                 return;
 
+            case "handleAdoption":
+                handleAdoption($conn);
+                $conn->close();
+                return;
+
             default:
                 http_response_code(400);
                 $data = ["error" => "Ismeretlen művelet"];
                 break;
+        }
+        $jsonOutput = json_encode($data, JSON_UNESCAPED_UNICODE);
+
+       if (isset($cacheConfig[$action])) {
+            if (!is_dir($cacheDir)) {
+                mkdir($cacheDir, 0755, true);
+            }
+            file_put_contents($cacheFile, $jsonOutput);
         }
 
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
@@ -152,9 +183,6 @@ function handleApplication($conn) {
         echo json_encode(["error" => "Hibás JSON formátum"]);
         return;
     }
-
-    $input = file_get_contents("php://input");
-    $data = json_decode($input, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
         echo json_encode(["error" => "Hibás JSON formátum"]);
@@ -190,6 +218,86 @@ function handleApplication($conn) {
 
     $stmt->close();
 }
+
+
+
+function handleAdoption($conn) {
+    header("Content-Type: application/json; charset=utf-8");
+
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    if (!is_array($data)) {
+        http_response_code(400);
+        echo json_encode(["error" => "Hibás JSON formátum"]);
+        return;
+    }
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo json_encode(["error" => "Hibás JSON formátum"]);
+        exit;
+    }
+    
+    if (empty($data["teljes_nev"]) || empty($data["email"]) || empty($data["telefonszam"]) || empty($data["animal_id"]) || empty($data["idopont"]) || empty($data["bemutatkozas"])) {
+        http_response_code(400);
+        echo json_encode(["error" => "Minden mező kitöltése kötelező!"]);
+        return;
+    }
+
+    $conn->begin_transaction();
+    try {
+        $stmtCheck = $conn->prepare("SELECT orokbefogado_id FROM orokbefogadok WHERE email = ? LIMIT 1");
+        $stmtCheck->bind_param("s", $data["email"]);
+        $stmtCheck->execute();
+        $result = $stmtCheck->get_result();
+
+        if ($row = $result->fetch_assoc()) {
+            $orokbefogado_id = $row["orokbefogado_id"];
+            
+            $stmtUpdate = $conn->prepare("UPDATE orokbefogadok SET teljes_nev = ?, telefonszam = ? WHERE orokbefogado_id = ?");
+            $stmtUpdate->bind_param("ssi", $data["teljes_nev"], $data["telefonszam"], $orokbefogado_id);
+            $stmtUpdate->execute();
+            $stmtUpdate->close();
+        } else {
+            $stmtInsert = $conn->prepare("INSERT INTO orokbefogadok (teljes_nev, email, telefonszam) VALUES (?, ?, ?)");
+            $stmtInsert->bind_param("sss", $data["teljes_nev"], $data["email"], $data["telefonszam"]);
+            $stmtInsert->execute();
+            
+            $orokbefogado_id = $conn->insert_id;
+            $stmtInsert->close();
+        }
+        $stmtCheck->close();
+
+
+        $stmtApp = $conn->prepare("INSERT INTO orokbefogadasi_jelentkezesek (orokbefogado_id, animal_id, idopont, bemutatkozas) VALUES (?, ?, ?, ?)");
+        $stmtApp->bind_param("iiss", $orokbefogado_id, $data["animal_id"], $data["idopont"], $data["bemutatkozas"]);
+        $stmtApp->execute();
+        $stmtApp->close();
+
+
+        $conn->commit();
+        echo json_encode(["success" => true, "message" => "Jelentkezés sikeresen rögzítve!"]);
+
+    } catch (mysqli_sql_exception $e) {
+        $conn->rollback();
+
+
+        if ($e->getCode() === 1062) {
+            http_response_code(409);
+            echo json_encode(["error" => "Erre az állatra már adtál be jelentkezést ezzel az e-mail címmel!"]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["error" => "Adatbázis hiba történt a mentés során."]);
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 function loadEnv($path) {
     if (!file_exists($path)) return;

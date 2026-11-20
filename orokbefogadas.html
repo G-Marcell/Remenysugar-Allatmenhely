@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remény Sugár Állatmenhely - Örökbefogadási időpont</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="egyszeru-oldal">
+
+    <header class="egyszeru-header">
+        <div class="logo">
+            <span>🐾</span>
+            <div>
+                <h2>Remény Sugár</h2>
+                <p>ÁLLATMENHELY</p>
+            </div>
+        </div>
+        <a href="allatok.html" class="kereses">← Vissza az állatokhoz</a>
+    </header>
+<button type="button" class="vissza-mobil-gomb" onclick="window.history.back()">← Vissza az oldalra</button>
+    <main class="tartalom-keret" style="display: flex; justify-content: center; padding: 40px 20px;">
+        <div class="onkentes-jobb" style="width: 100%; max-width: 600px;">
+            <div class="urlap-doboz">
+                <h3>Örökbefogadási időpontkérés</h3>
+                <p class="urlap-alcim">Kiválasztott kedvenc: <strong id="kivalasztottAllatNev" style="color: #27ae60;">Nincs megadva</strong></p>
+
+                <form class="jelentkezes-form" id="orokbefogadasForm">
+                    <div class="input-sor">
+                        <div class="input-csoport">
+                            <label>TELJES NÉV</label>
+                            <input type="text" id="orokbeNev" placeholder="Példa Petra" required>
+                        </div>
+                        <div class="input-csoport">
+                            <label>TELEFONSZÁM</label>
+                            <input type="tel" id="orokbeTelefon" placeholder="+36 30 123 4567" required>
+                        </div>
+                    </div>
+
+                    <div class="input-sor">
+                        <div class="input-csoport">
+                            <label>E-MAIL CÍM</label>
+                            <input type="email" id="orokbeEmail" placeholder="pelda@email.hu" required>
+                        </div>
+                        <div class="input-csoport">
+                            <label>TALÁLKOZÁSI IDŐPONT</label>
+                            <input type="date" id="talalkozasiDatum" required>
+                        </div>
+                    </div>
+
+                    <div class="input-csoport teljes-szelesseg">
+                        <label>NÉHÁNY SZÓBAN AZ OTTHONODRÓL,VALAMINT MENNYI IDŐT LESZ EGYEDÜL AZ ÁLLATT,KIKKEL FOG EGGYÜTT LAKNI?</label>
+                        <textarea id="orokbeMegjegyzes" placeholder="Kerti vagy lakás tartás, van-e már más állat..." rows="3" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;"></textarea>
+                    </div>
+
+                    <button type="button" class="fo-gomb beküldés-gomb" onclick="submitAdoption()">IDŐPONT FOGLALÁSA →</button>
+                </form>
+            </div>
+        </div>
+        <!-- A script betöltése, ami kiolvassa és beírja a nevet -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const kivalasztottAllatCimke = document.getElementById("kivalasztottAllatNev");
+            if (kivalasztottAllatCimke) {
+                const mentettNev = sessionStorage.getItem("orokbefogadandoAllat");
+                if (mentettNev) {
+                    kivalasztottAllatCimke.textContent = mentettNev;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+    </main>
+<script src="api_script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

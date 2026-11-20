@@ -23,7 +23,7 @@
             <input type="text" id="eleresKereso" placeholder="Keresés....">
         </div>
 
-        <a href="remenysugar.html" class="kereses">Vissza az oldalra →</a>
+        <a href="remenysugar.html" class="kereses">Vissza a főoldalra →</a>
 
     </header>
 
@@ -33,37 +33,53 @@
             <!-- Az állatok kártyái ide kerülnek a JavaScript segítségével -->
         </div>
 
-    </div>
-
-    <p class="galeria-megjegyzes">
-        Vidd a képre az egeret a részletekért, kattints a teljes adatlapért.
-    </p>
-</section>
-
-<div class="adatlap-hatter" id="adatlapHatter" aria-hidden="true">
-    <div class="adatlap" role="dialog" aria-modal="true"
-        aria-labelledby="adatlapNev">
-
-        <button class="adatlap-bezar" id="adatlapBezar"
-            type="button" aria-label="Bezárás">×</button>
-
-        <span class="adatlap-cimke" id="adatlapTipus"></span>
-        <h2 id="adatlapNev"></h2>
-        <p id="adatlapKor"></p>
-        <p id="adatlapErkezes"></p>
-
-        <h3>Személyiség</h3>
-        <p id="adatlapSzemelyiseg"></p>
-
-        <p class="adatlap-lablec">
-            Ismerd meg személyesen is leendő társadat!
+        <p class="galeria-megjegyzes">
+            Vidd a képre az egeret a részletekért, kattints a teljes adatlapért.
         </p>
+    </main>
+
+   
+    <div class="adatlap-hatter rejtett" id="adatlapHatter">
+        <div class="reszletes-adatlap-kontener">
+            
+            
+            <div class="adatlap-fejlec">
+                <button type="button" class="vissza-gomb" id="adatlapVissza">← Vissza az állatokhoz</button>
+                <span class="adatlap-cimke" id="adatlapTipus">KUTYA</span>
+            </div>
+
+            
+            <div class="adatlap-tartalom-grid">
+                <div class="adatlap-kep-doboz">
+                    <img id="adatlapKep" src="" alt="Állat képe">
+                </div>
+
+                <div class="adatlap-info-doboz">
+                    <h1 id="adatlapNev">Név</h1>
+                    
+                    <div class="tulajdonsagok-lista">
+                        <p><strong>Életkor:</strong> <span id="adatlapKor">-</span></p>
+                        <p><strong>Menhelyre érkezett:</strong> <span id="adatlapErkezes">-</span></p>
+                    </div>
+
+                    <h3>Személyiség & Leírás</h3>
+                    <p id="adatlapSzemelyiseg" class="szemelyiseg-szoveg">
+                        Itt jelenik meg az állat részletes leírása...
+                    </p>
+
+                    
+                    <div class="adatlap-akciogombok">
+                        <button type="button" class="orokbefogad-gomb" id="orokbefogadGomb" onclick="
+    const nev = document.getElementById('adatlapNev') ? document.getElementById('adatlapNev').textContent : 'Kedvenc';
+    sessionStorage.setItem('orokbefogadandoAllat', nev);
+    window.location.href = 'orokbefogadas.html';
+">Örökbefogadom 🐾</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
-    </section>
-
-
-</main>
 
     <script src="api_script.js"></script>
     <script src="script.js"></script>

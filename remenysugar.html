@@ -63,7 +63,7 @@
             </p>
 
             <div class="gombok">
-                <a href="#" class="fo-gomb">ISMERD MEG ŐKET →</a>
+                <a href="allatok.html" class="fo-gomb">ISMERD MEG ŐKET →</a>
                 <a href="#" class="masik-gomb">Segíteni szeretnék</a>
             </div>
 
@@ -105,34 +105,6 @@
         Vidd a képre az egeret a részletekért, kattints a teljes adatlapért.
     </p>
 </section>
-
-<div class="adatlap-hatter" id="adatlapHatter" aria-hidden="true">
-    <div class="adatlap" role="dialog" aria-modal="true"
-        aria-labelledby="adatlapNev">
-
-        <button class="adatlap-bezar" id="adatlapBezar"
-            type="button" aria-label="Bezárás">×</button>
-
-        <span class="adatlap-cimke" id="adatlapTipus"></span>
-        <h2 id="adatlapNev"></h2>
-        <p id="adatlapKor"></p>
-        <p id="adatlapErkezes"></p>
-
-        <h3>Személyiség</h3>
-        <p id="adatlapSzemelyiseg"></p>
-
-        <p class="adatlap-lablec">
-            Ismerd meg személyesen is leendő társadat!
-        </p>
-    </div>
-</div>
-    </section>
-
-
-
-    <!-- ÖNKÉNTESSÉG ÉS IDEIGLENES BEFOGADÁS SZEKCIÓ -->
-
-
 
 <section class="onkentes-szekcio" id="onkent">
     <div class="onkentes-bal">
@@ -193,17 +165,6 @@
                     </div>
                 </div>
 
-                <div class="input-sor">
-                    <div class="input-csoport">
-                        <label>JELSZÓ</label>
-                        <input type="password" id="jelszo" placeholder="Adj meg egy jelszót" required>
-                    </div>
-                    <div class="input-csoport">
-                        <label>JELSZÓ ISMÉT</label>
-                        <input type="password" id="jelszoIsmet" placeholder="Erősítsd meg a jelszót" required>
-                    </div>
-                </div>
-
                 <div class="input-csoport teljes-szelesseg">
                     <label>LAKCÍM</label>
                     <input type="text" id="lakcim" placeholder="Irányítószám, település, utca, házszám" required>
@@ -221,8 +182,43 @@
     </div>
 </section>
 
-<script src="script.js"></script>
-<script src="api_script.js"></script>
 
+
+    <div class="adatlap-hatter rejtett" id="adatlapHatter">
+        <div class="reszletes-adatlap-kontener">
+            
+            <div class="adatlap-fejlec">
+                <button type="button" class="vissza-gomb" id="adatlapVissza">← Vissza az állatokhoz</button>
+                <span class="adatlap-cimke" id="adatlapTipus">KUTYA</span>
+            </div>
+
+            <div class="adatlap-tartalom-grid">
+                <div class="adatlap-kep-doboz">
+                    <img id="adatlapKep" src="" alt="Állat képe">
+                </div>
+
+                <div class="adatlap-info-doboz">
+                    <h1 id="adatlapNev">Név</h1>
+                    
+                    <div class="tulajdonsagok-lista">
+                        <p><strong>Életkor:</strong> <span id="adatlapKor">-</span></p>
+                        <p><strong>Menhelyre érkezett:</strong> <span id="adatlapErkezes">-</span></p>
+                    </div>
+
+                    <h3>Személyiség & Leírás</h3>
+                    <p id="adatlapSzemelyiseg" class="szemelyiseg-szoveg">
+                        Itt jelenik meg az állat részletes leírása...
+                    </p>
+
+                    <div class="adatlap-akciogombok">
+                        <button type="button" class="orokbefogad-gomb" id="orokbefogadGomb">Örökbefogadom 🐾</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+<script src="api_script.js"></script>
 </body>
 </html>

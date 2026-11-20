@@ -67,13 +67,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             const kor = korSzamitas(allat.szuletesi_datum);
             const kartya = document.createElement("article");
             kartya.classList.add("allat-kartya");
+            kartya.dataset.id = allat.animal_id;
             kartya.dataset.tipus = allat.faj;
             kartya.dataset.nev = allat.nev;
             kartya.dataset.kor = kor;
             kartya.dataset.erkezes = allat.erkezes;
             kartya.dataset.szemelyiseg = allat.leiras;
             kartya.addEventListener("click", function () {
-                adatlapMegnyitasa(kartya);
+              //  adatlapMegnyitasa(kartya);
             });
 
 
@@ -118,6 +119,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const kor = korSzamitas(allat.szuletesi_datum);
             const kartya = document.createElement("article");
             kartya.classList.add("allat-kartya");
+            kartya.dataset.id = allat.animal_id;
             kartya.dataset.tipus = allat.faj;
             kartya.dataset.nev = allat.nev;
             kartya.dataset.kor = kor;
@@ -237,6 +239,68 @@ function submitForm() {
     });
 
 }
+
+
+function submitAdoption() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const kivalasztottAllatId = urlParams.get("id") || sessionStorage.getItem("orokbefogadandoAllatId");
+    nev = document.getElementById("orokbeNev").value;
+    telefon = document.getElementById("orokbeTelefon").value;
+    email = document.getElementById("orokbeEmail").value;
+    időpont = document.getElementById("talalkozasiDatum").value;
+    bemutatkozas = document.getElementById("orokbeMegjegyzes").value;
+
+
+
+
+    if (nev.value == "" || telefon.value == "" || email.value == "" || időpont.value == "" || bemutatkozas.value == "") {
+        alert("Kérjük, töltsd ki az összes mezőt!");
+        return false;
+    }
+
+    console.log("Állat ID:", kivalasztottAllatId);
+
+
+    const formData = {
+        teljes_nev: nev,
+        email: email,
+        telefonszam: telefon,
+        idopont: időpont,
+        bemutatkozas: bemutatkozas,
+        animal_id:kivalasztottAllatId
+    };
+
+
+    //Beérkező adatok vizsgálata küldés elött
+
+
+
+    // Küldés az API-nak
+
+    fetch("http://localhost/Remenysugar-Allatmenhely/api.php?action=handleAdoption", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("A form beküldése sikeres!");
+            document.getElementById("orokbefogadasForm").reset();
+        } else {
+            alert("Hiba történt a form beküldésekor.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Hiba történt a form beküldésekor.");
+    });
+
+}
+
 
 
 
